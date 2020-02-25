@@ -6,6 +6,8 @@ import NavBar from './component/NavBar'
 import Footer from './component/Footer';
 import Landing from './component/home/Landing';
 import Movie from './component/Movie';
+import SignUp from './component/SignUp';
+import SignIn from './component/SignIn';
 import './App.css'
 
 import store from './store'
@@ -17,8 +19,10 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <NavBar/>
-          <Route exact path='/movie/:id' component={Movie}/>
           <Route exact path='/' component={Landing}/>
+          <Route exact path='/movie/:id' component={Movie}/>
+          <Route path='/sign-up' component={SignUp}/>
+          <Route path='/sign-in' component={SignIn}/>
           <Footer/>
         </Router>
       </Provider>

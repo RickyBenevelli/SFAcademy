@@ -14,9 +14,7 @@ class Landing extends Component {
         const {loading} = this.props;
         return ( 
             <div>
-                
                 {loading ? <Spinner/>: <MoviesContainer/>}
-                
             </div>
          );
     }

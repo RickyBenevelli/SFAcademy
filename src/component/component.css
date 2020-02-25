@@ -15,7 +15,25 @@
 .barra{
     background-color:  #343a40;
 }
-.container{
+/* .container{
+    left: 50%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+} */
+.contenitore-navbar{
+    margin-bottom: 30px;
+}
+.contenitore-card{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.contenitore-footer{
+    margin-top: 60px;
+}
+.spinner-center{
     left: 50%;
     margin: auto;
     position: absolute;
@@ -23,6 +41,190 @@
     transform: translate(-50%, -50%);
     width: 50%;
 }
-.contenitore-navbar{
-    margin-bottom: 30px;
+
+/* FORM REGISTRAZIONE*/
+
+.firstly-square{
+    background-color: #2E4158;
+    height: 80%;
+    width: 40%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    border-radius: 10px;
+
+}
+ .firstly-bar {
+    background-color: #2E4158;
+    color: #707C8B;
+    color: #9DA6B1;
+    /* display: inline-block; */
+    text-decoration: none;
+    margin-top: 5%;
+    font-weight: 100;
+    font-size: 38px;
+    text-align: center;
+}
+.firstly-bar a{
+    text-decoration: none;
+}
+.firstly-bar-link{
+    color: rgb(138, 145, 155);
+    /* display: inline-block; */
+    margin: 0 10px;
+    padding-bottom: 5px;
+    text-decoration: none;
+}
+.firstly-bar-active{
+    color: white;
+    border-bottom: 1px solid #199087;
+}
+
+
+.center-form{
+    display: block;
+    width: 90%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    height: 70%;
+    background-color: #2E4158;
+}
+.sign{
+    background-color: #2E4158;
+    height: 90%;
+
+}
+.signup-username{
+    background-color: #2E4158;
+    display: block;
+    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 17%;
+}
+.signup-email{
+    background-color: #2E4158;
+    display: block;
+    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 15%;
+}
+.signup-password{
+    background-color: #2E4158;
+    display: block;
+    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 15%;
+}
+.signup-bottone{
+    color: #ffffff;
+    background-color: #2E4158;
+    display: block;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    height: 10%;
+}
+.signup-label{
+    background-color: #2E4158;
+    display: block;
+    text-transform: uppercase;
+    font-size: .9em;
+    color: white;
+    margin: 0;
+}
+.signup-input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    border-bottom: 1px solid #445366;
+    font-size: 1em;
+    font-weight: 300;
+    padding-bottom: 3px;
+    margin-top: 7px;
+}
+.signup-button{
+    color: #ffffff;
+    background-color: rgb(189, 86, 17);
+    border-color:  rgb(189, 86, 17);
+    border-radius: 3px;
+    height: 100%;
+    width: 60%;
+    right: 0;
+    top: 0;
+    margin-left: 20%;
+}
+
+
+.signin-username{
+    background-color: #2E4158;
+    display: block;
+    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 17%;
+}
+.signin-password{
+    background-color: #2E4158;
+    display: block;
+    margin: 0;
+    margin-bottom: 20%;
+    margin-top: 15%;
+}
+.signin-label{
+    background-color: #2E4158;
+    display: block;
+    text-transform: uppercase;
+    font-size: .9em;
+    color: white;
+    margin: 0;
+}
+.signin-input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    border-bottom: 1px solid #445366;
+    font-size: 1em;
+    font-weight: 300;
+    padding-bottom: 3px;
+    margin-top: 7px;
+}
+.signin-bottone{
+    color: #ffffff;
+    background-color: #2E4158;
+    display: block;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    height: 10%;
+}
+.signin-button{
+    color: #ffffff;
+    background-color: rgb(189, 86, 17);
+    border-color:  rgb(189, 86, 17);
+    border-radius: 3px;
+    height: 100%;
+    width: 60%;
+    right: 0;
+    top: 0;
+    margin-left: 20%;
+}
+.nopePoster{
+    left: 50%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    padding: 0;
+    display: flex;
 }

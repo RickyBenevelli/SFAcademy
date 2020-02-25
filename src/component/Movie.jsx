@@ -19,8 +19,7 @@ export class Movie extends Component {
     let movieInfo = (
       <div className="container">
         <div className="row">
-          <div className="col-md-4 card card-body">
-            <img src={movie.Poster} className="thumbnail" alt="Poster" />
+           <div className="col-md-4 card card-body"> {movie.Poster !== "N/A" ? <img src={movie.Poster} className="thumbnail" alt="Poster" />: <i class="fas fa-film fa-10x nopePoster"></i>}
           </div>
           <div className="col-md-8">
             <h2 className="mb-4">{movie.Title}</h2>

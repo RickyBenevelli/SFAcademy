@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 import MovieCard from '../MovieCard';
+import '../component.css'
 
 class MoviesComponent extends Component {
     
@@ -12,7 +13,7 @@ class MoviesComponent extends Component {
         content = movies.Response === "True" ? movies.Search.map((movie, index) => <MovieCard key={index} movie={movie}/>) : null;
         
         return ( 
-            <div className='row'>
+            <div className='row contenitore-card'>
                 {content}
             </div>
          );
