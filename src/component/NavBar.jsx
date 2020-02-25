@@ -1,6 +1,7 @@
 import React from 'react';
 import {Component} from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import './component.css'
 import Logo from './Logo'
@@ -22,10 +23,10 @@ class Navbar extends Component {
 
     render() { 
         return ( 
-            <div>
+            <div className="contenitore-navbar">
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <Logo className=''/>
-                    <a className="navbar-brand" href='#'>Home</a>
+                    <Link className="navbar-brand" to={'/'}>Home</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -33,10 +34,10 @@ class Navbar extends Component {
                     <div className="collapse navbar-collapse barra" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
-                                <a  className="nav-link barra" href='#'>SIGN IN <span className="sr-only">(current)</span></a>
+                                <Link  className="nav-link barra" to={'/sign-in'}>SIGN IN <span className="sr-only">(current)</span></Link>
                             </li>
                             <li className="nav-item">
-                                <a  className="nav-link barra">SIGN UP</a>
+                                <Link  className="nav-link barra" to={'/sign-up'}>SIGN UP</Link>
                             </li>
                         </ul>
                         <form className="form-inline my-2 my-lg-0" onSubmit={this.handleSubmit}>

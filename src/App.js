@@ -16,8 +16,10 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <Route exact path='/' component={Landing}/>
+          <NavBar/>
           <Route exact path='/movie/:id' component={Movie}/>
+          <Route exact path='/' component={Landing}/>
+          <Footer/>
         </Router>
       </Provider>
       );

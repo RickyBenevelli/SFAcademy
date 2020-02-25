@@ -15,3 +15,15 @@
 .barra{
     background-color:  #343a40;
 }
+.container{
+    /* background-color: indigo; */
+    left: 50%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+.contenitore-navbar{
+    margin-bottom: 30px;
+}
