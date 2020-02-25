@@ -1,0 +1,17 @@
+
+.logo a{
+    color: rgb(219, 189, 16);
+    text-decoration: none;
+    margin: 0 30px;
+}
+.Footer{
+    background-color: #343a40;
+    color: #ffffff;
+}
+/* rgb(50, 50, 53); footer */
+.Footer a {
+    color: #ee7f24;
+}
+.barra{
+    background-color:  #343a40;
+}
