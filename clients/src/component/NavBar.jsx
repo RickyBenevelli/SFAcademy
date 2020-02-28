@@ -34,7 +34,7 @@ class Navbar extends Component {
                     <div className="collapse navbar-collapse barra" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
-                                <Link  className="nav-link barra" to={'/sign-in'}>LOG IN <span className="sr-only">(current)</span></Link>
+                                <Link  className="nav-link barra" to={'/sign-in'}>SIGN IN <span className="sr-only">(current)</span></Link>
                             </li>
                             <li className="nav-item">
                                 <Link  className="nav-link barra" to={'/sign-up'}>SIGN UP</Link>

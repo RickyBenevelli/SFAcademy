@@ -9,7 +9,7 @@ class MovieCard extends Component {
         return ( 
         <div className="col-md-3 mb-5">
         <div className="card card-body bg-dark text-center h-100">
-          {movie.Poster !== "N/A" ? <img src={movie.Poster} className="w-100 mb-2" alt="Movie Cover" />: <i class="fas fa-film fa-10x nopePoster"></i>}
+          {movie.Poster !== "N/A" ? <img src={movie.Poster} className="w-100 mb-2" alt="Movie Cover" />: <i className="fas fa-film fa-10x nopePoster"></i>}
           <h5 className="text-light card-title">
             {movie.Title} - {movie.Year}
           </h5>

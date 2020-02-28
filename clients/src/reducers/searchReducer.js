@@ -4,7 +4,8 @@ const initialState = {
     text :'',
     movies: [],
     loading: false,
-    movie: []
+    movie: [],
+    isLogged: false
 }
 
 export default function(state = initialState, action){

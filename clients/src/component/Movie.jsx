@@ -9,9 +9,14 @@ import { fetchMovie, setLoading } from '../actions/searchActions';
 import Spinner from './Spinner';
 
 export class Movie extends Component {
+  state = {
+    title: this.Title,
+    id: this.props.match.params.id
+  };
   componentDidMount() {
     this.props.fetchMovie(this.props.match.params.id);
     this.props.setLoading();
+    console.log(this.state);
   }
   render() {
     const { loading, movie } = this.props;
