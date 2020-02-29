@@ -1,12 +1,13 @@
 var Sequelize = require('sequelize');
 
 const sequelize = new Sequelize(
-  'sfacademy', //database
+  'prova', //database
   'root', // user
   'Boboyrosso12', //password
   {
     host: 'localhost',
-    dialect: 'mysql'
+    dialect: 'mysql',
+    operatorAliases: false
   }
 );
 

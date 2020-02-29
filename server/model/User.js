@@ -5,18 +5,21 @@ var sequelize = require('./mysql');
 
 var tablename = 'users';
 
-var User = sequelize.define(tablename, {
-  id: {
-    type: Sequelize.INTEGER,
+module.exports = sequelize.define(tablename, {
+  // id: {
+  //   type: Sequelize.INTEGER,
+  //   primaryKey: true,
+  //   autoIncrement: true,
+  // },
+  email: {
+    type: Sequelize.STRING,
     primaryKey: true,
-    autoIncrement: true,
+    allowNull: false,
+    defaultValue: 2
   },
-  email: Sequelize.STRING,
-  password : Sequelize.INTEGER //da controllare
+  password : {type: Sequelize.INTEGER, defaultValue: " "} //da controllare
 },
 {
 	 timestamps: false,
 });
 
-
-module.exports = User
