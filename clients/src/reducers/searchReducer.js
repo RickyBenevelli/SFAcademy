@@ -1,4 +1,4 @@
-import {SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIE, LOADING} from '../actions/types';
+import {SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIE, LOADING, LOGIN} from '../actions/types';
 
 const initialState = {
     text :'',
@@ -32,6 +32,11 @@ export default function(state = initialState, action){
             return {
                 ...state,
                 loading: true
+            };
+        case LOGIN:
+            return {
+                ...state,
+                isLogged: true
             };
         default:
             return state;

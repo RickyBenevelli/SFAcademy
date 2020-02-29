@@ -53,14 +53,14 @@ console.log(req.body.params)
   .then(user => {
     if (!user){
       Users.create(information)
-      .then(user => res.json({status: user.email+ ' registred'}))
+      .then(user => {
+        res.json({status: user.email+ ' registred'}) 
+      })
       .catch(err => {
         res.send('error ' + err)
       })
     }
-    else{
-      console.error('già registrato');
-      
+    else{  
       res.json({error: 'Users alredy exists'})
     }
     

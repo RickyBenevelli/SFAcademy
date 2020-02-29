@@ -15,12 +15,12 @@ class SignIn extends Component {
 
         this.handleChange = (e) => {
             this.setState({[e.target.name]: e.target.value});
-            console.log(this.state)
+            // console.log(this.state)
         }
         this.handleSubmit = (e) => {
             e.preventDefault();
-            console.log('sumbit')
-            console.log('this is the actual state:', this.state);
+            // console.log('sumbit')
+            // console.log('this is the actual state:', this.state);
             this.registration()
             //eventualmente aggiungere la validazione del form
         }
@@ -33,9 +33,17 @@ class SignIn extends Component {
                     password: this.state.password
                 }
             })
-            .then(res => res ? console.log('registrazione avvenuta con successo'): console.log('hai sbagliato qualcosa'))
+            .then(res => {
+                if(res.data.status != undefined){
+                    console.log(JSON.stringify(res.data.status));
+                    this.props.history.push(`/sign-in`)
+                }
+                else{
+                    console.log(res.data.error);
+                }
+            })
             .catch(error=>{
-                alert("Error server "+ error)
+                alert("Error server "+ error);
               })
         }
 

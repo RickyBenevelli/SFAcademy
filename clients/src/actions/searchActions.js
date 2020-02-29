@@ -1,5 +1,6 @@
-import {SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIE, LOADING} from './types';
+import {SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIE, LOADING, LOGIN} from './types';
 import axios from 'axios';
+import store from '../store'
 
 import {APIKey} from '../APIKey'
 
@@ -34,4 +35,10 @@ export const setLoading = () => {
     return {
       type: LOADING
     };
-  };
+};
+
+export const login  = ()=> {
+    store.dispatch({
+        type: LOGIN
+    })
+}

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
+import {login} from '../actions/searchActions';
+
 import './component.css'
 import axios from 'axios';
-const baseUrl = "http://localhost:3001";
+const baseUrl = "http://localhost:3000";
 
 class SignIn extends Component {
     state = { 
@@ -18,37 +20,38 @@ class SignIn extends Component {
         // }
         const handleChange = (e) => {
             this.setState({[e.target.name]: e.target.value});
-            console.log(this.state)
+            // console.log(this.state)
         }
         const handleSubmit = (e) => {
             e.preventDefault(); //solo per lo sviluppo
-            console.log('sumbit')
-            console.log('this is the actual state:', this.state)
-            componentDidMount();
+            // console.log('sumbit')
+            // console.log('this is the actual state:', this.state)
+            access();
             // const errors = this.validate(this.state);
             // this.setState({errors});
             //eventualmente aggiungere la validazione del form
         }
 
-        const componentDidMount = () => {
-            let email= this.state.email; // Controllare il funzioinamento di questo
-            const url = baseUrl
+        const access = () => {
+            const url = baseUrl + '/router/sign-in';
             axios.get(url, {
                 params: {
-                    email: email
+                    email: this.state.email,
+                    password: this.state.password
                 }
             })
             .then(res=>{
-              if (res.data.success) {
-                const data = res.data.data[0]
-                this.setState({
-                  email: data.email,
-                  password: data.password
-                })
+              // eslint-disable-next-line eqeqeq
+              if (res.data.status != undefined) {
+                const data = res.data.status
                 console.log(JSON.stringify(data))
+                // console.log(JSON.stringify(res))
+                login();
+                this.props.history.push('/')
               }
               else {
-                alert("Users not found")
+                alert(res.data.error)
+                // console.log('Isers non found')
               }
             })
             .catch(error=>{

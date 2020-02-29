@@ -23,7 +23,7 @@ module.exports = sequelize.define(votation, {
   email: {
     type: Sequelize.STRING,
     allowNull: false,
-    defaultValue: '',
+    // defaultValue: '',
   },
   vote: {
     type: Sequelize.INTEGER,
