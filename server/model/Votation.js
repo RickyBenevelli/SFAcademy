@@ -18,12 +18,10 @@ module.exports = sequelize.define(votation, {
   title_film: {
     type: Sequelize.STRING,
     allowNull: false,
-    // defaultValue: '',
 },
   email: {
     type: Sequelize.STRING,
     allowNull: false,
-    // defaultValue: '',
   },
   vote: {
     type: Sequelize.INTEGER,

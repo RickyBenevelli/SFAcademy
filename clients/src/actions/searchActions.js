@@ -1,10 +1,8 @@
-import {SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIE, LOADING, LOGIN} from './types';
+import {SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIE, LOADING, LOGIN, DATA} from './types';
 import axios from 'axios';
 import store from '../store'
 
 import {APIKey} from '../APIKey'
-
-
 
 export const searchMovie = text => dispatch =>{
     dispatch({
@@ -20,7 +18,6 @@ export const fetchMovies = text => dispatch => {
         payload: response.data}
     ))
     .catch(err => console.log(err))
-
 }
 
 export const fetchMovie = id => dispatch => {
@@ -40,5 +37,11 @@ export const setLoading = () => {
 export const login  = ()=> {
     store.dispatch({
         type: LOGIN
+    })
+}
+export const information = async(email)  => {
+    store.dispatch({
+        type: DATA,
+        payload: email
     })
 }

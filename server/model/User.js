@@ -6,18 +6,13 @@ var sequelize = require('./mysql');
 var tablename = 'users';
 
 module.exports = sequelize.define(tablename, {
-  // id: {
-  //   type: Sequelize.INTEGER,
-  //   primaryKey: true,
-  //   autoIncrement: true,
-  // },
   email: {
     type: Sequelize.STRING,
     primaryKey: true,
     allowNull: false,
     defaultValue: 2
   },
-  password : {type: Sequelize.INTEGER, defaultValue: " "} //da controllare
+  password : {type: Sequelize.INTEGER} //da implementare il controllo sulla password
 },
 {
 	 timestamps: false,

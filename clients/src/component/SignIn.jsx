@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import {login} from '../actions/searchActions';
+import {login, information} from '../actions/searchActions';
 
 import './component.css'
 import axios from 'axios';
@@ -10,26 +11,17 @@ class SignIn extends Component {
     state = { 
         email:'',
         password: '',
-     }
+    }
     render() {
-        // this.validate = data => {
-        //     const errors = {};
-        //     if (!data.password) errors.password="password can't be blank"
-        //     if (data.state.password.length()< 8) errors.password = "password must be at least 8 characters"
-        //     return errors;
-        // }
+
         const handleChange = (e) => {
             this.setState({[e.target.name]: e.target.value});
-            // console.log(this.state)
         }
+
         const handleSubmit = (e) => {
-            e.preventDefault(); //solo per lo sviluppo
-            // console.log('sumbit')
-            // console.log('this is the actual state:', this.state)
+            //aggiungere la validazione del form in una futura versione
+            e.preventDefault();
             access();
-            // const errors = this.validate(this.state);
-            // this.setState({errors});
-            //eventualmente aggiungere la validazione del form
         }
 
         const access = () => {
@@ -41,23 +33,23 @@ class SignIn extends Component {
                 }
             })
             .then(res=>{
-              // eslint-disable-next-line eqeqeq
-              if (res.data.status != undefined) {
+              if (res.data.status !== undefined) {
                 const data = res.data.status
-                console.log(JSON.stringify(data))
-                // console.log(JSON.stringify(res))
+                console.log(JSON.stringify(data)) //users entrato
                 login();
                 this.props.history.push('/')
-              }
-              else {
-                alert(res.data.error)
-                // console.log('Isers non found')
-              }
-            })
-            .catch(error=>{
-              alert("Error server "+ error)
-            })
-          }
+                this.props.information(this.state.email) //ERROR: da risolvere con funzioni async
+                
+            }
+            else {
+                alert(res.data.error) // utente non trovato
+            }
+        })
+        .catch(error=>{
+            alert("Error server "+ error)
+        })
+    }
+    
 
         return ( 
             <div className="firstly-square">
@@ -83,5 +75,9 @@ class SignIn extends Component {
          );
     }
 }
- 
-export default SignIn;
+
+const mapStateToProps = state => ({
+    email : state.user.email
+  });
+  
+  export default connect( mapStateToProps, { information })(SignIn);

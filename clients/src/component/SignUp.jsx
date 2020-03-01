@@ -7,7 +7,6 @@ const baseUrl = "http://localhost:3000";
 
 class SignIn extends Component {
     state = { 
-        // username: '',
         email: '',
         password:''
      }
@@ -15,14 +14,13 @@ class SignIn extends Component {
 
         this.handleChange = (e) => {
             this.setState({[e.target.name]: e.target.value});
-            // console.log(this.state)
         }
+
+
         this.handleSubmit = (e) => {
             e.preventDefault();
-            // console.log('sumbit')
-            // console.log('this is the actual state:', this.state);
             this.registration()
-            //eventualmente aggiungere la validazione del form
+            //aggiungere la validazione del form in una successiva versione
         }
         this.registration = () => {
             
@@ -34,9 +32,9 @@ class SignIn extends Component {
                 }
             })
             .then(res => {
-                if(res.data.status !== undefined){ //controllare che vada bene l'operatore logico
-                    console.log(JSON.stringify(res.data.status));
-                    this.props.history.push(`/sign-in`)
+                if(res.data.status !== undefined){
+                    console.log(JSON.stringify(res.data.status));//utente registrato correttamente
+                    this.props.history.push(`/sign-in`); // riindirizzamento al sign-in
                 }
                 else{
                     console.log(res.data.error);
@@ -54,10 +52,6 @@ class SignIn extends Component {
                     <div className="title-sign">
                             SignUp
                         </div>
-                    {/* <div className="signup-username">
-                            <label htmlFor="username" className="signup-label">username</label>
-                            <input type="text" name="username" className="signup-input" onChange={this.handleChange}/>
-                        </div> */}
                         <div className="signup-email">
                             <label htmlFor="email" className="signup-label">email</label>
                             <input type="email" name="email" className="signup-input" onChange={this.handleChange}/>
@@ -72,7 +66,7 @@ class SignIn extends Component {
                     </form>
                 </div>
             </div>
-         );
+        );
     }
 }
  

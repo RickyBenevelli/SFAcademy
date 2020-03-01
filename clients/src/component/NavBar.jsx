@@ -3,12 +3,12 @@ import {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import store from '../store';
-import { createHashHistory } from 'history';
+import { createHashHistory } from 'history'; // permette di fare le ricerche indipendentemente dalla pagina in cui si è
 import axios from 'axios'
 
 import './component.css';
 import Logo from './Logo';
-// import Saluto from './Saluto';
+// import Saluto from './Saluto';    da implementare in una prossima versione
 
 import {searchMovie, fetchMovies, setLoading} from '../actions/searchActions';
 

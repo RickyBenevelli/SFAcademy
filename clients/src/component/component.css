@@ -1,4 +1,4 @@
-
+/* STILE GENERICO */
 .logo a{
     color: rgb(219, 189, 16);
     text-decoration: none;
@@ -8,21 +8,12 @@
     background-color: #343a40;
     color: #ffffff;
 }
-/* rgb(50, 50, 53); footer */
 .Footer a {
     color: #ee7f24;
 }
 .barra{
     background-color:  #343a40;
 }
-/* .container{
-    left: 50%;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-} */
 .contenitore-navbar{
     margin-bottom: 30px;
 }
@@ -62,7 +53,6 @@
     background-color: #2E4158;
     color: #707C8B;
     color: #9DA6B1;
-    /* display: inline-block; */
     text-decoration: none;
     margin-top: 5%;
     font-weight: 100;
@@ -74,7 +64,6 @@
 }
 .firstly-bar-link{
     color: rgb(138, 145, 155);
-    /* display: inline-block; */
     margin: 0 10px;
     padding-bottom: 5px;
     text-decoration: none;
@@ -94,8 +83,6 @@
     margin: auto;
     text-align: center;
 }
-
-
 .center-form{
     display: block;
     width: 90%;
@@ -180,8 +167,6 @@
     top: 0;
     margin-left: 20%;
 }
-
-
 .signin-username{
     background-color: #2E4158;
     display: block;
@@ -236,6 +221,8 @@
     top: 0;
     margin-left: 20%;
 }
+
+/* ALTRO */
 .nopePoster{
     left: 50%;
     margin: auto;

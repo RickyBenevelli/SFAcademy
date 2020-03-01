@@ -19,18 +19,9 @@ export class Movie extends Component {
   componentDidMount() {
     this.props.fetchMovie(this.props.match.params.id);
     this.props.setLoading();
-    // console.log(this.state);
   }
   
   render() {
-    // if(this.props.movie.Title !== undefined){
-    //   var info = this.props.movie
-    //   this.setState({
-    //     title: info.Title,
-    //     id: info.id
-    //   })
-    //   console.log(this.state)
-    // }
     const handleChange = (e) => {
       this.setState({[e.target.name]: e.target.value});
       console.log(this.state)
@@ -43,32 +34,31 @@ export class Movie extends Component {
         )
       }
       e.preventDefault();
-      const baseUrl = "http://localhost:3000"; //DA TOGLIERE E CONFIGURARE IL PROXY
+      const baseUrl = "http://localhost:3000";
       var url = baseUrl + '/router/votation';
       var stato = store.getState();
 
-      if(stato.movies.isLogged){ //se è loggato
+      if(stato.user.isLogged){
         axios.post(url, {
           params:{
             id_film: stato.movies.movie.imdbID,
             title_film: stato.movies.movie.Title,
-            email: 'si@',
+            email: stato.user.email,
             vote: this.state.vote,
           }
         })
         .then(res => {
           if(res.data.status !== undefined){
-            //VOTO ANDATO A BUON FINE
-            console.log(JSON.stringify(res.data.status));
+            alert(JSON.stringify(res.data.status)); //voto andato a buon fine
           }
-          else if (res.data.error !== undefined){
+          else if (res.data.error !== undefined){ // L'utente ha già votato questo film
             alert(res.data.error)
           }
           else{
-            alert('qualcosa storto')
+            alert('Qualcosa è andato storto')
           }
         })
-        .catch(err => alert('errore: ' + err))
+        .catch(err => alert('Errore: ' + err))
       }
       else{
         alert('Devi prima accedere al tuo account')
