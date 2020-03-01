@@ -70,20 +70,6 @@ console.log(req.body.params)
   })
 }
 
-//FUNZIONE ASINCRONA
-// controllers.creating = async(req, res) =>  {
-//   const response = await sequelize.sync().then(() => {
-//         Users.create({
-//             email:  req.query.email,      //FIX THIS
-//             password: req.query.password   
-//         });
-//     })
-//     .catch(err => {
-//         return err;
-//     });
-//     res.json(response)}
-
-
 //LOG IN DELL'UTENTE
 controllers.enter = (req, res) => {
 
@@ -108,17 +94,18 @@ controllers.enter = (req, res) => {
 
 //VOTAZIONE FILM
 controllers.votation = (req, res) => {
+
   const information = {
-    id_film: req.query.id_film,
-    title_film: req.query.title_film,
-    email: req.query.email,
-    vote: req.query.vote,
+    id_film: req.body.params.id_film,
+    title_film: req.body.params.title_film,
+    email: req.body.params.email,
+    vote: req.body.params.vote,
   };
-console.log(req.query)
+  
   Votation.findOne({
     where: {
-      id_film: req.query.id_film,
-      email: req.query.email
+      id_film: req.body.params.id_film,
+      email: req.body.params.email
     }
   })
   .then(alredyexist => {
@@ -139,6 +126,43 @@ console.log(req.query)
   })
 };
 
+
+controllers.scores = (req, res) => {
+  var finale = [];
+  Votation.findAll()
+  .then(data => {
+    data = JSON.parse(JSON.stringify(data));
+    // console.log(data)
+    id = [];
+    data.map(votation => {
+      var trovato = false;
+      for(i=0; i < finale.length; i++){
+        if(finale[i][0] == votation.id_film){
+          trovato = true;
+          // console.log(finale[i])
+          finale[i] = [votation.id_film, votation.title_film, votation.vote + finale[i][2], 1 + finale[i][3]]
+          // console.log(finale[i])
+        }
+      }
+      if(trovato == false){
+        finale.push([votation.id_film, votation.title_film, votation.vote, 1]);
+      }
+    })
+    finale.sort((a, b) => { //ordino la lista in ordine decrescente
+      mediaA = a[2]/a[3];
+      mediaB = b[2]/a[3];
+      if(mediaA > mediaB){
+        return -1;
+      }else if(mediaA < mediaB){
+        return 1;
+      }else{
+        return 0;
+      }
+    })
+    res.json({data: finale})
+  })
+  .catch(err => console.log(err))
+};
 
 
 controllers.get = async (req,res) => {

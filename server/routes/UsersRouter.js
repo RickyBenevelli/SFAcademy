@@ -18,10 +18,6 @@ router.post('/sign-up', controllers.creating);
 
 router.get('/sign-in', controllers.enter);
 
-router.get('/saved', (req, res) => { //DA CAMBIARE
-
-  res.json({status: 'Utente Salvato'});
-
-});
+router.get('/scores', controllers.scores);
 
 module.exports = router;

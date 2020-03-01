@@ -63,8 +63,11 @@ class SignIn extends Component {
             <div className="firstly-square">
                 <div className="center-form">
                     <form action="" className="sign" onSubmit={handleSubmit}>
+                        <div className="title-sign">
+                            SignIn
+                        </div>
                         <div className="signin-username">
-                            <label htmlFor="email" className="signup-label">email</label>
+                            <label htmlFor="email" className="signin-label">email</label>
                             <input type="text" name="email" className="signin-input" onChange={handleChange} value={this.state.email}/>
                         </div>
                         <div className="signin-password">

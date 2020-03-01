@@ -83,6 +83,17 @@
     color: white;
     border-bottom: 1px solid #199087;
 }
+.foto-home{
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+}
 
 
 .center-form{
@@ -99,7 +110,14 @@
 .sign{
     background-color: #2E4158;
     height: 90%;
-
+}
+.title-sign{
+    display: block;
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+    width: flex;
+    margin: 30px;
 }
 .signup-username{
     background-color: #2E4158;
@@ -227,4 +245,13 @@
     border-radius: 5px;
     padding: 0;
     display: flex;
+}
+.votation{
+    margin: 10px;
+    margin-left: 50%;
+    border-radius: 5px;
+    border: #ffffff;
+    height: 22%;
+    /* width: 10%; */
+    text-align: center;
 }

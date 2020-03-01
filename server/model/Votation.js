@@ -13,7 +13,7 @@ module.exports = sequelize.define(votation, {
     defaultValue: 0,
   },
   id_film: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull: false},
   title_film: {
     type: Sequelize.STRING,

@@ -34,7 +34,7 @@ class SignIn extends Component {
                 }
             })
             .then(res => {
-                if(res.data.status != undefined){
+                if(res.data.status !== undefined){ //controllare che vada bene l'operatore logico
                     console.log(JSON.stringify(res.data.status));
                     this.props.history.push(`/sign-in`)
                 }
@@ -51,6 +51,9 @@ class SignIn extends Component {
             <div className="firstly-square">
                 <div className="center-form">
                     <form action="" className="sign" onSubmit={this.handleSubmit}>
+                    <div className="title-sign">
+                            SignUp
+                        </div>
                     {/* <div className="signup-username">
                             <label htmlFor="username" className="signup-label">username</label>
                             <input type="text" name="username" className="signup-input" onChange={this.handleChange}/>

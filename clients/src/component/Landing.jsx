@@ -4,9 +4,7 @@ import React, {Component} from 'react';
 
 import {connect} from 'react-redux'
 
-// import Navbar from '../NavBar';
-// import Footer from '../Footer';
-import Spinner from '../Spinner'
+import Spinner from './Spinner'
 import MoviesContainer from './MoviesContainer'
 
 class Landing extends Component {

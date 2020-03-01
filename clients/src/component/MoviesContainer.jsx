@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import {connect} from 'react-redux';
 
-import MovieCard from '../MovieCard';
-import '../component.css'
+import MovieCard from './MovieCard';
+import './component.css'
 
 class MoviesComponent extends Component {
     
